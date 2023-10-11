@@ -128,7 +128,7 @@ public struct BarChartView: View {
         VStack {
             HStack(spacing: 0) {
                 VStack {
-                    BarsView(dataPoints: dataPoints, limit: limit, showAxis: style.showAxis, maxY: style.maxY)
+                    BarsView(dataPoints: dataPoints, limit: limit, maxY: style.maxY)
                         .frame(minHeight: style.barMinHeight)
                         .background(grid)
 
