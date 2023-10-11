@@ -7,7 +7,7 @@ let package = Package(
     name: "SwiftUICharts",
     platforms: [
         .macOS(.v11),
-        .iOS(.v14),
+        .iOS(.v15),
         .watchOS(.v7),
         .tvOS(.v14)
     ],
