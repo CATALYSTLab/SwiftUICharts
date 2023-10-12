@@ -7,8 +7,10 @@
 //
 import SwiftUI
 
+extension LocalizedStringKey: @unchecked Sendable {}
+
 /// The type that describes the group of data points in the chart.
-public struct Legend {
+public struct Legend: Sendable {
     /// Color representing the legend
     let color: Color
 
@@ -46,7 +48,7 @@ extension Legend: Hashable {
 }
 
 /// The type that describes a data point in the chart.
-public struct DataPoint: Identifiable {
+public struct DataPoint: Identifiable, Sendable {
     /// Random unique identifier
     public let id = UUID()
     /// Starting point of a bar (used only in the ``BarChartView``)
@@ -130,23 +132,23 @@ extension DataPoint {
             .init(value: 130, label: "5", legend: fatBurning),
             .init(value: 124, label: "6", legend: fatBurning),
             .init(value: 135, label: "7", legend: fatBurning),
-            .init(value: 133, label: "8", legend: fatBurning),
-            .init(value: 136, label: "9", legend: fatBurning),
-            .init(value: 138, label: "10", legend: fatBurning),
-            .init(value: 150, label: "11", legend: buildFitness),
-            .init(value: 151, label: "12", legend: buildFitness),
-            .init(value: 150, label: "13", legend: buildFitness),
-            .init(value: 136, label: "14", legend: fatBurning),
-            .init(value: 135, label: "15", legend: fatBurning),
-            .init(value: 130, label: "16", legend: fatBurning),
-            .init(value: 130, label: "17", legend: fatBurning),
-            .init(value: 150, label: "18", legend: buildFitness),
-            .init(value: 151, label: "19", legend: buildFitness),
-            .init(value: 150, label: "20", legend: buildFitness),
-            .init(value: 160, label: "21", legend: highIntensity),
-            .init(value: 159, label: "22", legend: highIntensity),
-            .init(value: 161, label: "23", legend: highIntensity),
-            .init(value: 158, label: "24", legend: highIntensity),
+//            .init(value: 133, label: "8", legend: fatBurning),
+//            .init(value: 136, label: "9", legend: fatBurning),
+//            .init(value: 138, label: "10", legend: fatBurning),
+//            .init(value: 150, label: "11", legend: buildFitness),
+//            .init(value: 151, label: "12", legend: buildFitness),
+//            .init(value: 150, label: "13", legend: buildFitness),
+//            .init(value: 136, label: "14", legend: fatBurning),
+//            .init(value: 135, label: "15", legend: fatBurning),
+//            .init(value: 130, label: "16", legend: fatBurning),
+//            .init(value: 130, label: "17", legend: fatBurning),
+//            .init(value: 150, label: "18", legend: buildFitness),
+//            .init(value: 151, label: "19", legend: buildFitness),
+//            .init(value: 150, label: "20", legend: buildFitness),
+//            .init(value: 160, label: "21", legend: highIntensity),
+//            .init(value: 159, label: "22", legend: highIntensity),
+//            .init(value: 161, label: "23", legend: highIntensity),
+//            .init(value: 158, label: "24", legend: highIntensity),
         ]
     }
 }
