@@ -24,7 +24,7 @@ struct LabelsView: View {
                         .multilineTextAlignment(.center)
                         .foregroundColor(.accentColor)
                         .font(.caption)
-                    Spacer()
+                        .frame(maxWidth: .infinity)
                 }
             }
         }
