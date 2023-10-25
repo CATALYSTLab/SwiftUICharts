@@ -34,7 +34,11 @@ struct LineChartShape: Shape {
             dataPoints.forEach {
                 currentX += stepX
                 let y = CGFloat($0.endValue / displayedMaxY) * rect.height
-                path.addLine(to: CGPoint(x: currentX, y: rect.height - y))
+//                path.addLine(to: CGPoint(x: currentX, y: rect.height - y))
+                path.addLine(to: CGPoint(x: currentX - (0.5 * stepX), y: rect.height - y))
+                if $0 == dataPoints.last {
+                    path.addLine(to: CGPoint(x: currentX, y: rect.height - y))
+                }
             }
 
             if closePath {

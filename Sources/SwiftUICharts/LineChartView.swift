@@ -154,8 +154,15 @@ public struct LineChartView: View {
             }
 
             if style.showLabels {
-                LabelsView(dataPoints: dataPoints, labelCount: style.labelCount ?? dataPoints.count)
-                    .accessibilityHidden(true)
+                HStack {
+                    LabelsView(dataPoints: dataPoints, labelCount: style.labelCount ?? dataPoints.count)
+                        .accessibilityHidden(true)
+                    AxisView(dataPoints: [], maxY: 0.0)
+                        .accessibilityHidden(true)
+                        .padding(.leading, style.axisLeadingPadding)
+                        .hidden()
+                        .frame(height: 0.0)
+                }
             }
 
             if style.showLegends {
@@ -172,9 +179,9 @@ struct LineChartView_Previews: PreviewProvider {
     static var previews: some View {
         HStack {
             LineChartView(dataPoints: DataPoint.mock)
-                .chartStyle(LineChartStyle(showAxis: false, showLabels: false))
+                .chartStyle(LineChartStyle(showAxis: false, showLabels: true, drawing: .stroke(width: 4)))
             LineChartView(dataPoints: DataPoint.mock)
-                .chartStyle(LineChartStyle(showAxis: false, showLabels: false, maxY: 320.0))
+                .chartStyle(LineChartStyle(showAxis: true, showLabels: true, maxY: 270*2))
         }
     }
 }
