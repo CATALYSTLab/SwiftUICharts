@@ -10,6 +10,7 @@ import SwiftUI
 struct BarsView: View {
     let dataPoints: [DataPoint]
     let limit: DataPoint?
+    let showAxis: Bool
     let maxY: Double?
 
     @Environment(\.sizeCategory) private var sizeCategory
@@ -91,7 +92,7 @@ struct BarsView: View {
 #if DEBUG
 struct BarsView_Previews: PreviewProvider {
     static var previews: some View {
-        BarsView(dataPoints: DataPoint.mock, limit: nil, maxY: nil)
+        BarsView(dataPoints: DataPoint.mock, limit: nil, showAxis: true, maxY: nil)
     }
 }
 #endif

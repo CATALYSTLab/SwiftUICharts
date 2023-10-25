@@ -128,7 +128,7 @@ public struct BarChartView: View {
         VStack {
             HStack(spacing: 0) {
                 VStack {
-                    BarsView(dataPoints: dataPoints, limit: limit, maxY: style.maxY)
+                    BarsView(dataPoints: dataPoints, limit: limit, showAxis: style.showAxis, maxY: style.maxY)
                         .frame(minHeight: style.barMinHeight)
                         .background(grid)
 
@@ -163,7 +163,7 @@ struct BarChartView_Previews : PreviewProvider {
         let limitBar = DataPoint(value: 100, label: "Trend", legend: limit)
         return HStack(spacing: 0) {
             BarChartView(dataPoints: DataPoint.mock, limit: limitBar)
-                .chartStyle(BarChartStyle(showLabels: true, showLegends: false))
+                .chartStyle(BarChartStyle(showLabels: false, showLegends: false))
             BarChartView(dataPoints: DataPoint.mock, limit: limitBar)
                 .chartStyle(BarChartStyle(showLabels: false, showLegends: false, maxY: 320.0))
         }
