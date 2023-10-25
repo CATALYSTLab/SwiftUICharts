@@ -163,7 +163,7 @@ struct BarChartView_Previews : PreviewProvider {
         let limitBar = DataPoint(value: 100, label: "Trend", legend: limit)
         return HStack(spacing: 0) {
             BarChartView(dataPoints: DataPoint.mock, limit: limitBar)
-                .chartStyle(BarChartStyle(showLabels: false, showLegends: false))
+                .chartStyle(BarChartStyle(showLabels: true, showLegends: false))
             BarChartView(dataPoints: DataPoint.mock, limit: limitBar)
                 .chartStyle(BarChartStyle(showLabels: false, showLegends: false, maxY: 320.0))
         }
