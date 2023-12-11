@@ -176,7 +176,9 @@ public struct CombinedBarLineChartView: View {
     }
 }
 
+#if DEBUG
 #Preview {
     CombinedBarLineChartView(barDataPoints: DataPoint.mock, lineDataPoints: DataPoint.mock)
         .chartStyle(CombinedBarLineChartStyle(showAxis: true, showLabels: true, showLegends: false, drawing: .stroke(width: 4.0)))
 }
+#endif
